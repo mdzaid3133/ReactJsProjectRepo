@@ -1,0 +1,10 @@
+.container ::-webkit-scrollbar{
+   border-radius: 8px;
+   background-color: white;
+   height: 8px;
+}
+.container ::-webkit-scrollbar-thumb{
+    background: gray;
+    width: 10%;
+    border-radius: 5px;
+}

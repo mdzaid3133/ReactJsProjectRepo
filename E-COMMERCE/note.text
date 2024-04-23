@@ -1,0 +1,47 @@
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import CategoryPage from './CategoryPage';
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home} />
+        <Route path="/category/:category" component={CategoryPage} />
+      </Switch>
+    </Router>
+  );
+}
+
+// Home.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Home() {
+  return (
+    <div>
+      <Link to="/category/jeans">Jeans</Link>
+      {/* Add links for other categories */}
+    </div>
+  );
+}
+
+// CategoryPage.js
+import React from 'react';
+import { useParams } from 'react-router-dom';
+
+function CategoryPage() {
+  const { category } = useParams();
+
+  // Fetch and display products based on the category
+  return (
+    <div>
+      <h2>{category}</h2>
+      {/* Display products */}
+    </div>
+  );
+}
+
+export default CategoryPage;
